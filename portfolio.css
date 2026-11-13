@@ -1,0 +1,157 @@
+/* Israr Afzal: charcoal, warm ivory and muted gold visual identity. */
+[hidden] { display:none !important; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.skip-link { position:fixed; z-index:30; top:8px; left:16px; padding:12px 18px; color:var(--bg); background:var(--c); border-radius:8px; transform:translateY(-150%); }
+.skip-link:focus { transform:none; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--c); outline-offset:4px; }
+.brand > b { font-size:30px; letter-spacing:-2px; color:var(--c); }
+.hero .copy h1 { letter-spacing:-4px; }
+.hero .copy h3 { line-height:1.8; }
+.hero .portrait > b { right:0; }
+.company-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.company-grid img { width:160px; max-width:80%; height:94px; }
+.company-grid article { min-height:220px; }
+.brand-track { animation-duration:55s; }
+.brand-marquee:focus-within .brand-track { animation-play-state:paused; }
+.brand-logo { background:#20201e; }
+.project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:24px; }
+.project-card { display:flex; flex-direction:column; min-width:0; overflow:hidden; background:#20201e; border:1px solid #39372f; border-radius:14px; transition:transform .2s,border-color .2s; }
+.project-card:hover { border-color:var(--c); transform:translateY(-4px); }
+.project-image { position:relative; aspect-ratio:404/316; overflow:hidden; background:#2b2822; }
+.project-image img { display:block; width:100%; height:100%; object-fit:cover; }
+.project-arrow { position:absolute; right:14px; top:14px; width:34px; height:34px; display:grid; place-items:center; border:1px solid #ffffff70; border-radius:50%; color:white; background:#171717da; font-size:20px; }
+.project-info { padding:22px; display:flex; flex:1; flex-direction:column; align-items:flex-start; }
+.project-category { color:var(--c); font-size:10px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
+.project-info h3 { font-size:20px; line-height:1.4; margin:10px 0 20px; }
+.project-link { margin-top:auto; font-size:12px; color:#cec5b4; }
+.project-link > span { margin-left:6px; color:var(--c); }
+.work-actions { display:flex; justify-content:center; margin-top:30px; }
+.filters button { font-family:inherit; cursor:pointer; }
+.about > img { height:auto; max-height:540px; object-fit:contain; object-position:center; }
+.about-cv { display:inline-block; margin-top:14px; }
+.contact-details { display:grid; gap:16px; margin-top:30px; }
+.contact-details a { width:fit-content; max-width:100%; overflow-wrap:anywhere; font-size:16px; }
+.contact-details a:hover { color:var(--c); }
+.contact-details span { display:block; margin-bottom:5px; font-size:10px; font-weight:700; color:var(--m); text-transform:uppercase; letter-spacing:1.5px; }
+.contact-form .form-note { grid-column:1/-1; margin:0; font-size:12px; }
+.contact-form .btn { font:700 13px Manrope,Arial,sans-serif; }
+.copyright { padding-top:18px; padding-bottom:24px; border-top:1px solid var(--l); gap:16px; }
+.hero .copy, .contact-copy { min-width:0; }
+@media (min-width:901px) and (max-width:1000px) {
+  .hero { grid-template-columns:1fr 1fr; }
+  .hero .copy { padding:70px 10px 60px 0; }
+  .hero .copy h1 { font-size:70px; }
+  .hero .portrait { min-height:560px; }
+}
+@media (max-width:1100px) { .project-info h3 { font-size:17px; } }
+@media (max-width:900px) {
+  .hero .copy h1 { letter-spacing:-1.5px; }
+  .hero .portrait > img { object-position:center 20%; }
+  .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:18px; }
+  .project-info { padding:16px; }
+  .project-info h3 { font-size:16px; margin-bottom:14px; }
+  .project-category { font-size:8px; letter-spacing:1px; }
+  .project-link { font-size:11px; }
+  .project-arrow { width:28px; height:28px; top:9px; right:9px; font-size:17px; }
+  .services .title h2 { font-size:28px; line-height:1.15; }
+  .about > img { width:min(100%,360px); height:auto; max-height:none; justify-self:center; }
+  .contact-details { margin:24px 0 8px; }
+  .work-actions .line { font-size:11px; }
+}
+@media (max-width:480px) {
+  .project-grid { gap:11px; }
+  .project-info { padding:13px 11px; }
+  .project-info h3 { font-size:14px; }
+  .project-category { font-size:7px; letter-spacing:.65px; }
+  .company-grid article { min-height:180px; }
+  .company-grid img { height:75px; margin-bottom:13px; }
+  .copyright { font-size:10px; padding-inline:20px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .project-card { transition:none; }
+  .project-card:hover { transform:none; }
+  .brand-item[aria-hidden="true"] { display:none; }
+}
+
+.arrow-icon, .play-icon { width:1em; height:1em; display:inline-block; vertical-align:-.12em; flex-shrink:0; }
+.hero .actions .btn { display:inline-flex; align-items:center; gap:6px; }
+
+/* Video portfolio: locally cached covers and one on-demand player. */
+.company-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.project-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
+.project-image { aspect-ratio:4/5; }
+.project-image img { object-position:center 30%; }
+.project-info { padding:18px; }
+.project-info h3 { font-size:17px; margin:9px 0 14px; }
+.project-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:52px; height:52px; border:1px solid #ffffffc0; border-radius:50%; display:grid; place-items:center; background:#171717b8; color:white; box-shadow:0 4px 24px #0004; transition:background .2s; }
+.project-play svg { width:25px; height:25px; margin-left:2px; }
+.project-card:hover .project-play { background:#8c6d34; }
+.video-duration { position:absolute; right:10px; bottom:10px; padding:4px 7px; background:#171717dc; color:#fff; border-radius:5px; font-size:11px; font-variant-numeric:tabular-nums; }
+.work-toolbar { display:flex; align-items:flex-end; gap:16px; flex-wrap:wrap; }
+.work-toolbar label { display:flex; flex-direction:column; gap:7px; color:#cec5b4; font-size:11px; }
+.work-toolbar label:nth-child(2) { flex:1; max-width:420px; }
+.work-toolbar select, .work-toolbar input { width:100%; min-height:43px; border:1px solid #5b5548; border-radius:8px; background:#20201e; color:#f5f1e8; padding:10px 12px; font:13px Manrope,Arial,sans-serif; }
+.work-toolbar select { min-width:210px; }
+.work-toolbar :is(select,input):focus-visible { outline:2px solid var(--c); outline-offset:3px; }
+#clear-filters { min-height:43px; color:var(--c); background:none; border:0; font:600 12px Manrope,Arial,sans-serif; cursor:pointer; text-decoration:underline; text-underline-offset:4px; }
+.work-status { margin:18px 0 0; color:#cec5b4; font-size:12px; }
+.work-empty { border:1px solid #5b5548; background:#20201e; border-radius:12px; padding:32px 24px; color:#cec5b4; line-height:1.7; }
+.work-actions { gap:12px; flex-wrap:wrap; }
+.work-actions button { background:#2b2822; color:var(--c); font:600 13px Manrope,Arial,sans-serif; cursor:pointer; }
+.video-dialog { width:max-content; max-width:calc(100vw - 24px); max-height:calc(100dvh - 24px); overflow:auto; padding:16px; }
+.video-dialog-bar { max-width:700px; }
+.video-dialog-bar h2 { max-width:540px; }
+.video-dialog-player { --video-ratio:.5625; width:min(86vw,calc(70dvh * var(--video-ratio))); max-width:100%; height:auto; aspect-ratio:var(--video-ratio); margin:0 auto; background:#000; }
+.video-dialog-player iframe { width:100%; height:100%; display:block; border:0; }
+.player-help { margin:12px 0 0; color:#b6b0a4; font-size:11px; text-align:center; }
+.player-help a { color:var(--c); text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:1100px) { .project-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:900px) {
+ .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+ .work-toolbar { gap:10px; }
+ .work-toolbar label { flex:1; min-width:0; }
+ .work-toolbar label:nth-child(2) { max-width:none; }
+ .work-toolbar select { min-width:0; }
+ .work-toolbar input, .work-toolbar select { font-size:16px; min-height:44px; }
+ .project-info { padding:14px; }
+ .project-info h3 { font-size:15px; }
+ .project-play { width:42px; height:42px; }
+ .project-play svg { width:22px; height:22px; }
+ .work-status { font-size:11px; }
+ .filters { margin-bottom:14px; }
+}
+@media(max-width:480px) {
+ .company-grid { grid-template-columns:1fr; }
+ .company-grid article { min-height:170px; }
+ .project-info { padding:12px 10px; }
+ .project-info h3 { font-size:13px; }
+ .project-category { font-size:8px; letter-spacing:.8px; line-height:1.5; }
+ .project-link { font-size:10px; }
+ .project-play { width:36px; height:36px; }
+ .video-duration { right:7px; bottom:7px; font-size:10px; }
+ .work-actions > * { width:100%; text-align:center; }
+ .video-dialog { padding:12px; }
+ .video-dialog-player { width:min(83vw,calc(68dvh * var(--video-ratio))); }
+}
+@media(prefers-reduced-motion:reduce) { .project-play { transition:none; } }
+
+
+/* Charcoal / Ivory / Gold — shared interaction and contrast treatment. */
+:root { color-scheme:dark; }
+::selection { color:var(--bg); background:var(--c); }
+.hero .copy h1 em { color:var(--c); }
+.btn, .hero .actions .btn { background:var(--c); color:var(--bg); }
+.btn:hover, .btn:focus-visible { background:#e6c784; color:var(--bg); }
+.line, .header-contact, .filters button { transition:background-color .2s,color .2s,border-color .2s; }
+.line:hover, .line:focus-visible { background:#30291d; border-color:var(--c); color:var(--t); }
+.filters button { color:#c9c1b2; }
+.filters button:hover { color:var(--t); border-color:var(--c); }
+.filters button.on { color:var(--bg); background:var(--c); border-color:var(--c); }
+.contact-form :is(input,select,textarea):focus-visible { outline:2px solid var(--c); outline-offset:3px; }
+.contact-form ::placeholder, .work-toolbar input::placeholder { color:#a49d90; opacity:1; }
+nav a:hover, nav a:focus-visible { color:var(--c); }
+.project-card:hover .project-play { background:#6b532a; }
+.video-dialog-close:hover { color:var(--bg); background:var(--c); border-color:var(--c); }
+@media(prefers-reduced-motion:reduce) {
+ .line, .header-contact, .filters button { transition:none; }
+}
