@@ -137,6 +137,18 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--c); outline-offs
 
 
 /* Charcoal / Ivory / Gold — shared interaction and contrast treatment. */
+/* A meaningful preview remains while a thumbnail loads, or if it is unavailable. */
+.thumbnail-fallback { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:10px; padding:20px 18px 50px; background:radial-gradient(ellipse at 80% 10%,#57462b,transparent 70%),#20201e; color:var(--t); }
+.thumbnail-fallback > span { color:var(--c); font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+.thumbnail-fallback strong { font-size:18px; line-height:1.4; }
+.thumbnail-fallback small { font-size:11px; letter-spacing:0; color:var(--m); }
+.project-image img { position:relative; z-index:1; }
+.project-play, .video-duration { z-index:2; }
+@media(max-width:480px) {
+ .thumbnail-fallback { padding:12px 10px 36px; gap:6px; }
+ .thumbnail-fallback strong { font-size:13px; }
+ .thumbnail-fallback > span { font-size:8px; }
+}
 :root { color-scheme:dark; }
 ::selection { color:var(--bg); background:var(--c); }
 .hero .copy h1 em { color:var(--c); }

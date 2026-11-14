@@ -1,5 +1,12 @@
 'use strict';
 
+// Keep the title and play control visible if a cover fails to load.
+document.querySelectorAll('.project-image img').forEach(image => {
+  const showFallback = () => { image.hidden = true; };
+  image.addEventListener('error', showFallback, { once: true });
+  if (image.complete && image.naturalWidth === 0) showFallback();
+});
+
 const work = document.getElementById('work');
 const cards = [...document.querySelectorAll('.project-card')];
 const buttons = [...document.querySelectorAll('.filters button')];

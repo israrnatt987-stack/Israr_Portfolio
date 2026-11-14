@@ -67,7 +67,7 @@ header{width:100%;max-width:none;padding-left:clamp(22px,4vw,72px);padding-right
   text-align:center !important;
 }
 /* DikhaDe asset uses a URL-safe filename in the final package */
-.company-grid article img[src*="Company DikhaDe Logo"]{
+.company-grid article img[src*="company-dikhade-logo"]{
   height:96px !important;
   max-width:88% !important;
   object-fit:contain !important;
