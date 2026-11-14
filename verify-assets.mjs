@@ -4,6 +4,19 @@ import { dirname, resolve, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
+// A file called "assets" cannot contain the photos and video covers.
+// Report this upload mistake once, before checking individual asset paths.
+try {
+  if (!statSync(resolve(root, 'assets')).isDirectory()) {
+    console.error('\nASSET CHECK FAILED\n"assets" is a file, but it must be a folder.');
+    console.error('Replace only that mistaken file with the complete assets folder from this package, beside index.html.\n');
+    process.exit(1);
+  }
+} catch (error) {
+  console.error('\nASSET CHECK FAILED\nThe assets folder is missing or cannot be read.');
+  console.error('Extract the ZIP and upload its complete assets folder beside index.html, including video-thumbnails.\n');
+  process.exit(1);
+}
 const references = new Set();
 const errors = [];
 const html = readFileSync(resolve(root, 'index.html'), 'utf8');
